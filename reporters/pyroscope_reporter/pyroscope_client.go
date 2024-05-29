@@ -29,7 +29,7 @@ import (
 	"strconv"
 	"time"
 
-	"mosn.io/holmes"
+	"github.com/lampnick/holmes"
 
 	mlog "mosn.io/pkg/log"
 )

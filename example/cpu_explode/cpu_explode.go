@@ -23,7 +23,7 @@ import (
 
 	mlog "mosn.io/pkg/log"
 
-	"mosn.io/holmes"
+	"github.com/lampnick/holmes"
 )
 
 // run `curl http://localhost:10003/cpuex` after 15s(warn up)

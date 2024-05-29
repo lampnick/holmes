@@ -35,7 +35,7 @@ import (
 
 	_ "net/http/pprof"
 
-	"mosn.io/holmes"
+	"github.com/lampnick/holmes"
 )
 
 func init() {

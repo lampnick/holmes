@@ -2,6 +2,6 @@ module rideshare
 
 go 1.14
 
-require mosn.io/holmes v1.1.0
+require github.com/lampnick/holmes v1.1.0
 
-replace mosn.io/holmes => ../../
+replace github.com/lampnick/holmes => ../../

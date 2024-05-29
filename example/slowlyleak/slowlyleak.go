@@ -21,7 +21,7 @@ import (
 	"net/http"
 	"time"
 
-	"mosn.io/holmes"
+	"github.com/lampnick/holmes"
 )
 
 func init() {

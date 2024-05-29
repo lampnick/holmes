@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"mosn.io/holmes"
-	"mosn.io/holmes/reporters/pyroscope_reporter"
+	"github.com/lampnick/holmes"
+	"github.com/lampnick/holmes/reporters/pyroscope_reporter"
 	"rideshare/bike"
 	"rideshare/car"
 	"rideshare/scooter"

@@ -22,12 +22,12 @@ import (
 
 	mlog "mosn.io/pkg/log"
 
-	//"mosn.io/holmes/reporters/http_reporter"
+	//"github.com/lampnick/holmes/reporters/http_reporter"
 	"math/rand"
 	"net/http"
 	"time"
 
-	"mosn.io/holmes"
+	"github.com/lampnick/holmes"
 )
 
 // run `curl http://localhost:10024/rand` after 15s(warn up)

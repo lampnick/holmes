@@ -3,7 +3,7 @@ module example.com/m
 go 1.17
 
 require (
-	mosn.io/holmes v0.0.0-20220125114618-8cb365eb42ac
+	github.com/lampnick/holmes v0.0.0-20220125114618-8cb365eb42ac
 	mosn.io/pkg v0.0.0-20220308091858-ea728aacbe63
 )
 
@@ -18,4 +18,4 @@ require (
 	mosn.io/api v0.0.0-20210204052134-5b9a826795fd // indirect
 )
 
-replace mosn.io/holmes => ../../
+replace github.com/lampnick/holmes => ../../
