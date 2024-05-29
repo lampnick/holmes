@@ -305,6 +305,7 @@ func (h *Holmes) startDumpLoop() {
 
 				continue
 			}
+			h.Infof("[Holmes] collect resource usage: cpu(%):%v,mem(%):%v,go:%v,thread%v,cpuCore:%v,memLimit:%v", cpu, mem, gNum, tNum, cpuCore, memoryLimit)
 
 			h.cpuStats.push(cpu)
 			h.memStats.push(mem)
@@ -708,7 +709,12 @@ func (h *Holmes) getCPUCore() (float64, error) {
 	}
 
 	if h.opts.UseCGroup {
-		return getCGroupCPUCore()
+		res, err := getCGroupCPUCore()
+		if err != nil {
+			h.Errorf("[Holmes] get getCGroupCPUCore failed, use runtime.NumCPU, error: %v", err)
+			return float64(runtime.NumCPU()), nil
+		}
+		return res, nil
 	}
 
 	return float64(runtime.NumCPU()), nil
@@ -720,7 +726,12 @@ func (h *Holmes) getMemoryLimit() (uint64, error) {
 	}
 
 	if h.opts.UseCGroup {
-		return getCGroupMemoryLimit()
+		res, err := getCGroupMemoryLimit()
+		if err != nil {
+			h.Errorf("[Holmes] getCGroupMemoryLimit failed, use getNormalMemoryLimit, error: %v", err)
+			return getNormalMemoryLimit()
+		}
+		return res, nil
 	}
 
 	return getNormalMemoryLimit()
