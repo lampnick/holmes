@@ -708,15 +708,6 @@ func (h *Holmes) getCPUCore() (float64, error) {
 		return float64(runtime.GOMAXPROCS(-1)), nil
 	}
 
-	if h.opts.UseCGroup {
-		res, err := getCGroupCPUCore()
-		if err != nil {
-			h.Infof("[Holmes] get getCGroupCPUCore failed, use runtime.NumCPU, error: %v", err)
-			return float64(runtime.NumCPU()), nil
-		}
-		return res, nil
-	}
-
 	return float64(runtime.NumCPU()), nil
 }
 
